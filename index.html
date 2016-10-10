@@ -19,29 +19,156 @@
 	<meta name="msapplication-TileColor" content="#FFFFFF">
 	<meta name="msapplication-TileImage" content="~/images/favicons/ms-icon-144x144.png">
 	<link rel="icon" href="~/images/favicons/favicon-32x32.png" sizes="32x32">
-	-->
+-->
 
-	<title>Document</title>
-	<meta content="width=device-width, initial-scale=1" name="viewport">
-	<meta name="description" content="">
+<title>Document</title>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="description" content="">
 
-	<!-- Css Styles -->
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+<!-- Css Styles -->
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+<link rel="stylesheet" type="text/css" href="bower_components/pagePiling.js/jquery.pagepiling.css" /> <!-- pagepiling -->
 
-	<!-- Fonts -->
-	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+<!-- Fonts -->
+<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
 
 
 </head>
 <body>
 	
+	<div id="menu">
+		<div class="nav-right visible-xs">
+			<div class="button" id="btn">
+				<div class="bar top"></div>
+				<div class="bar middle"></div>
+				<div class="bar bottom"></div>
+			</div>
+		</div>
+		<main>
+			<nav>
+				<div class="nav-right hidden-xs">
+					<div class="button" id="btn">
+						<div class="bar top"></div>
+						<div class="bar middle"></div>
+						<div class="bar bottom"></div>
+					</div>
+				</div>
+			</nav>			
 
-	
+		</main>
 
+		<div class="sidebar">
+			<ul class="sidebar-list">
+				<li class="sidebar-item"><a href="#" class="sidebar-anchor">Home.</a></li>
+				<li class="sidebar-item"><a href="#" class="sidebar-anchor">About Us.</a></li>
+				<li class="sidebar-item"><a href="#" class="sidebar-anchor">Portfolio.</a></li>
+				<li class="sidebar-item"><a href="#" class="sidebar-anchor">Contact.</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div id="pagepiling">
+		<div class="section main_section">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="logo_name">
+							<p>FOX</p>
+						</div>						
+					</div>					
+				</div>
+				<div class="row">
+					<div class="col-xs-8">
+						<div class="page_title text_uppercase">
+							<h1>
+								headrer 
+							</h1>
+							<h1>
+								big headrer 
+							</h1>
+						</div>
+						<div class="page_subtitle">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit
+							</p>
+						</div>
+						<div class="page_description">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+							</p>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div>
+							<img src="images/logo.png">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section whoweare_section">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						Who we are
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section whatwedo_section">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						What We Do
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section contact_section">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						Contact
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Scripts -->
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>	
+
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+	<script type="text/javascript" src="bower_components/pagePiling.js/jquery.pagepiling.js"></script>
+
+
+	<script src="js/main.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			function toggleSidebar() {
+				$(".button").toggleClass("active");
+				// $("main").toggleClass("move-to-left");
+				$(".sidebar").toggleClass("sidebar_bg");
+				$(".sidebar-item").toggleClass("active");
+			}
+
+			$(".button").on("click tap", function() {
+				toggleSidebar();
+			});
+
+			$(document).keyup(function(e) {
+				if (e.keyCode === 27) {
+					toggleSidebar();
+				}
+			});
+
+		});
+	</script>
 
 </body>
 </html>
